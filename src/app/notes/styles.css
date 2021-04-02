@@ -1,0 +1,65 @@
+@layer components {
+
+  /* .note {
+    @apply overflow-hidden;
+  } */
+
+  .note-tags {
+    @apply flex items-center my-2 md:h-8;
+  }
+
+  .note-tag {
+    @apply inline-block ml-2 p-1 rounded whitespace-nowrap;
+  }
+
+  .note-tag:last-of-type {
+    @apply mr-2;
+  }
+
+  .note-categories {
+    @apply flex justify-end flex-grow flex-wrap pr-2 h-10 overflow-hidden;
+  }
+
+  .note-categories > a {
+    @apply inline-block whitespace-nowrap ml-2 my-1;
+  }
+
+  .note-main {
+    @apply rounded-md shadow-lg overflow-hidden;
+  }
+
+  .note-header {
+    @apply flex items-center bg-yellow-300 px-2 py-1 h-10 border-b-2 border-black;
+  }
+
+  .note-title {
+    @apply text-xl whitespace-nowrap pl-1;
+  }
+
+  .note-task-btn {
+    @apply border-2 border-black bg-white rounded w-8 h-8;
+  }
+
+  .note-body {
+    @apply bg-white px-2 text-lg; /* pt-1 */
+  }
+
+  /* Toggleable classes */
+
+  .note-tags-unconstrained {
+    @apply md:h-auto;
+  }
+
+  .note-categories-unconstrained {
+    @apply h-auto;
+  }
+
+  .note-body-constrained {
+    @apply h-28 md:h-36 xl:h-48;
+  }
+
+  .note-body-min-h {
+    min-height: 10rem;
+  }
+
+}

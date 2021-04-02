@@ -1,0 +1,30 @@
+<div *ngIf="note" class="note">
+
+  <div class="note-tags" [ngClass]="{ 'note-tags-unconstrained': !isNoteTagsConstrained }">
+    <a *ngIf="note.importance" href="#"
+      class="note-tag"
+      [style.backgroundColor]="importanceDetails[note.importance].backgroundColor"
+    >
+      {{ importanceDetails[note.importance].text + " priority" }}
+    </a>
+    <div #divCategories *ngIf="note.categories" class="note-categories" [ngClass]="{ 'note-categories-unconstrained': !isNoteTagsConstrained }">
+        <a #aCategory *ngFor="let category of note.categories" href="#" class="pill btn-blue">
+          {{ category }}
+        </a>
+    </div>
+  </div>
+
+  <div class="note-main">
+
+    <a routerLink="/note/{{ note.id }}" class="note-header">
+      <button (click)="onTaskButtonClick($event)" class="note-task-btn">{{ taskStatusDetails[note.status].text }}</button>
+      <h3 *ngIf="note.title" class="note-title">{{ note.title }}</h3>
+    </a>
+
+    <div class="note-body" [ngClass]="{ 'note-body-constrained': isNoteBodyConstrained, 'note-body-min-h': !isNoteBodyConstrained }">
+      <p>{{ note.body }}</p>
+    </div>
+
+  </div>
+
+</div>

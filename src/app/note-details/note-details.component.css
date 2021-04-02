@@ -1,0 +1,3 @@
+.note-info :is(input) {
+  @apply bg-yellow-50;
+}

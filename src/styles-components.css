@@ -1,0 +1,51 @@
+@layer base {
+
+  body {
+    @apply bg-yellow-50;
+  }
+
+}
+
+@layer components {
+
+  /* Pages */
+
+  .header-main {
+    @apply text-3xl text-center my-4;
+  }
+
+  /* Notes */
+
+  .notes-header {
+    @apply text-2xl pl-2 mx-2 md:text-center mt-8 mb-4 border-b-2 border-black;
+  }
+
+  .notes-grid {
+    @apply grid justify-items-center gap-x-12 gap-y-16 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-4 mt-4;
+  }
+
+  .notes:last-child {
+    @apply pb-4;
+  }
+
+  /* Buttons */
+
+  .pill {
+    @apply py-1 px-2 rounded-full;
+  }
+
+  .btn-blue {
+    @apply bg-blue-600 text-gray-100 hover:bg-blue-500 focus:ring-4 focus:ring-blue-300;
+  }
+
+  .btn-red {
+    @apply bg-red-600 text-white hover:bg-red-500 focus:ring-4 focus:ring-red-300;
+  }
+
+  /* Footer */
+
+  .footer {
+    @apply bg-gray-600;
+  }
+
+}

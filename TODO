@@ -1,0 +1,55 @@
+
+☐ Improve app-note-root rendering
+
+Header:
+
+  ✔ Remove 'Notes' from logo @done(21-04-02 00:18)
+  ✔ Make logo responsive @done(21-04-02 00:18)
+
+Nav:
+
+  ☐ Make navigation stick to the top or left of the screen and be hidden unless unwrapped
+  ✔ Rework navigation links @done(21-04-02 00:18)
+
+Note:
+
+  ✔ Make categories overflow correctly @done(21-04-02 00:18)
+  ☐ Make note body text overflow correctly
+
+  ☐ Make notes editable
+  ☐ Add 'save changes' pop up when note is edited
+
+  ☐ Make tag stick to note header and line up correctly with categories
+
+Task:
+
+  ☐ Display due date
+  ☐ Mark task if it is overdue
+
+Event:
+
+  ☐ Make event display start end end dates
+
+Dashboard:
+
+  ☐ Add pretty backgrounds
+  ☐ Add background image to 'Dashboard' header
+
+  ☐ Scroll page to top when note is clicked
+
+Notes list:
+
+  ✔ Add notes display by note / task / event sections @done(21-04-02 00:17)
+  ✔ Add search filter @done(21-04-02 00:17)
+  ✔ Add category filter @done(21-04-02 00:17)
+
+  ☐ Actually filter notes
+
+Note details:
+
+  ☐ Add delete note button
+  ☐ Display additional info (createdAt, dueDate, startDate, endDate)
+
+Notes service:
+
+  ✔ Make sure that service keeps track if the notes were modified and returnes cached notes if not modified @done(21-04-02 00:18)

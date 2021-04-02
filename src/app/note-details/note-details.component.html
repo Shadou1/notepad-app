@@ -1,0 +1,22 @@
+<main class="min-h-screen">
+
+  <section *ngIf="note" class="note-info flex mx-4 mb-8 justify-between">
+
+    <div class="flex flex-col">
+
+      <h2 class="text-lg">Note info:</h2>
+
+      <div>
+        <label for="note-created-at">Created at:</label>
+        <input type="date" name="note-created-at" id="note-created-at" [value]="note.createdAt.toISOString().substr(0, 10)" readonly>
+      </div>
+
+    </div>
+
+    <button class="pill btn-red self-start">Delete note</button>
+
+  </section>
+
+  <app-note-root [note]="note" [isNoteTagsConstrained]="false" class="block mx-4"></app-note-root>
+
+</main>

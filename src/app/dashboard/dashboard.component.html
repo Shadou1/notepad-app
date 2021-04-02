@@ -1,0 +1,37 @@
+<main class="notes-dashboard min-h-screen">
+
+  <h1 class="header-main">Dashboard</h1>
+
+  <!-- TODO add prettier loading -->
+  <div *ngIf="this.gettingNotes">
+    <h3 class="text-center mt-8">Getting your notes</h3>
+  </div>
+
+  <section *ngIf="notesRelevant && notesRelevant.length" class="notes notes-relevant">
+
+    <h2 class="notes-header">Recent notes:</h2>
+    <div class="notes-grid">
+        <app-note-root *ngFor="let note of notesRelevant" [note]="note" [isNoteBodyConstrained]="true" class="note-root"></app-note-root>
+    </div>
+
+  </section>
+
+  <section *ngIf="notesWeek && notesWeek.length" class="notes notes-week">
+
+    <h2 class="notes-header">This week:</h2>
+    <div class="notes-grid">
+      <app-note-root *ngFor="let note of notesWeek" [note]="note" [isNoteBodyConstrained]="true" class="note-root"></app-note-root>
+    </div>
+
+  </section>
+
+  <section *ngIf="notesMonth && notesMonth.length" class="notes notes-month">
+
+    <h2 class="notes-header">This month:</h2>
+    <div class="notes-grid">
+      <app-note-root *ngFor="let note of notesMonth" [note]="note" [isNoteBodyConstrained]="true" class="note-root"></app-note-root>
+    </div>
+
+  </section>
+
+</main>

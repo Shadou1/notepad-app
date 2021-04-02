@@ -1,0 +1,46 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+      url('./assets/fonts/Inter-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+      url('./assets/fonts/Inter-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''),
+      url('./assets/fonts/Inter-ExtraBold.ttf') format('truetype');
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p, a, input, label, button {
+    @apply font-inter text-gray-900;
+  }
+  h1 {
+    @apply font-extrabold;
+  }
+  h2, h3 {
+    @apply font-semibold;
+  }
+
+  /* {
+    @apply focus:outline-none;
+  } */
+
+}
