@@ -1,0 +1,11 @@
+<button
+  class="pill btn-blue text-2xl fixed right-8 bottom-0 opacity-0 transition-all duration-300"
+  [ngClass]="{
+    'visible bottom-8 opacity-100': notesService.notesChanged.size || notesService.newNote,
+    'invisible': !(notesService.notesChanged.size || notesService.newNote)
+  }"
+  (click)="saveNotes()"
+>
+  <div *ngIf="this.isSaving" class="spinner"></div>
+  {{ this.isSaving ? "Saving" : "Save changes" }}
+</button>

@@ -1,5 +1,6 @@
-.note-root {
-
-  @apply max-w-screen-md w-full;
-
+.spinner {
+  border: 6px solid #FFFFFF00;
+  border-top: 6px solid #111;
+  border-radius: 50%;
+  @apply inline-block w-12 h-12 animate-spin;
 }

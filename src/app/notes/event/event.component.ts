@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Event as EventNote } from 'src/app/types';
+import { Component, Input, OnInit } from '@angular/core'
+import { Event as EventNote } from 'src/app/types'
+import { NotesService } from '../notes.service'
 
 @Component({
   selector: 'app-event',
@@ -9,9 +10,12 @@ import { Event as EventNote } from 'src/app/types';
 export class EventComponent implements OnInit {
 
   @Input() note: EventNote | undefined
+  @Input() isNoteEditable = false
   @Input() isNoteTagsConstrained = true
   @Input() isNoteBodyConstrained = false
   eventDetails: { backgroundColor: string, text: string } | undefined
+
+  isAddCategoryCollapsed = true
 
   importanceDetails = {
     1: { backgroundColor: '#ddd', text: 'Low' },
@@ -41,10 +45,20 @@ export class EventComponent implements OnInit {
     return undefined
   }
 
-  constructor() { }
+  constructor(
+    private notesService: NotesService,
+  ) { }
 
   ngOnInit(): void {
     if (this.note) this.eventDetails = this.getEventTime(this.note)
+  }
+
+  addCategory(category: string) {
+    if (this.note) this.notesService.addNoteCategory(this.note, category)
+  }
+
+  deleteCategory(category: string) {
+    if (this.note) this.notesService.deleteNoteCategory(this.note, category)
   }
 
 }

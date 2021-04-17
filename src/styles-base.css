@@ -29,7 +29,7 @@
   }
 
   h1, h2, h3, h4, h5, h6,
-  p, a, input, label, button {
+  p, a, input, select, label, button {
     @apply font-inter text-gray-900;
   }
   h1 {
@@ -38,9 +38,5 @@
   h2, h3 {
     @apply font-semibold;
   }
-
-  /* {
-    @apply focus:outline-none;
-  } */
 
 }

@@ -14,12 +14,14 @@ Nav:
 Note:
 
   ✔ Make categories overflow correctly @done(21-04-02 00:18)
-  ☐ Make note body text overflow correctly
+  ✔ Make note body text overflow correctly @done(21-04-17 12:13)
 
-  ☐ Make notes editable
-  ☐ Add 'save changes' pop up when note is edited
+  ✔ Make notes editable @done(21-04-13 13:58)
+  ✔ Add 'save changes' pop up when note is edited @done(21-04-13 14:23)
 
   ☐ Make tag stick to note header and line up correctly with categories
+
+  ☐ Figure out notes createdAt local date issues
 
 Task:
 
@@ -29,6 +31,8 @@ Task:
 Event:
 
   ☐ Make event display start end end dates
+
+  ☐ Add correct queryParams for eventDetails
 
 Dashboard:
 
@@ -43,13 +47,39 @@ Notes list:
   ✔ Add search filter @done(21-04-02 00:17)
   ✔ Add category filter @done(21-04-02 00:17)
 
-  ☐ Actually filter notes
+  ✔ Actually filter notes @done(21-04-11 14:38)
+
+  ☐ Empty query params do not reset filters
+  ☐ Filter notes more efficiently
+  ✘ Notes are being filtered more than 1 time because of activated route @cancelled(21-04-12 15:38)
+  ☐ Notes are being filtered two times, 1 when fieldset form changes, which causes query params to change which again causes fieldset to change and filter notes again
 
 Note details:
 
-  ☐ Add delete note button
+  ✔ Add delete note button @done(21-04-13 13:58)
+  ✔ Actually delete note on button press @done(21-04-17 12:04)
   ☐ Display additional info (createdAt, dueDate, startDate, endDate)
+
+Note saver:
+
+  ✔ Put changed notes to backend @done(21-04-13 14:23)
+  ✔ Post new notes to backend @done(21-04-17 12:04)
+
+  ✔ Indicate the saving process @done(21-04-13 20:51)
+  ☐ Indicate whether the notes were actually saved
+  ☐ Indicate how many notes were saved
+
+  ☐ Disable the saving indicator only when button is faded out (opacity-0)
+
+  ☐ Warn user about leaving the page is the notes are not saved
 
 Notes service:
 
   ✔ Make sure that service keeps track if the notes were modified and returnes cached notes if not modified @done(21-04-02 00:18)
+  ☐ Only add note to notesChanged the first time it gets changed
+
+  ✔ Add delete note request @done(21-04-17 12:05)
+  ✔ Add post note request @done(21-04-17 12:05)
+  ✘ Add post all changed notes request @cancelled(21-04-17 12:05)
+
+  ✔ Origin body is not updated once the new note has been put @done(21-04-17 12:05)

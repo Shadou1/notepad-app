@@ -5,21 +5,46 @@
     <h1 class="text-4xl select-none">Notes</h1>
   </a>
 
-  <nav class="flex flex-grow justify-start ml-8 text-lg md:text-xl">
-    <a href="#" class="hover:underline whitespace-nowrap">New note</a>
+  <nav class="flex flex-grow justify-start items-center ml-8 text-lg md:text-xl">
+    <!-- <app-note-new></app-note-new> -->
+    <a routerLink="/note/new-note" class="hover:underline whitespace-nowrap text-left">New note</a>
     <a routerLink="/notes" class="ml-3 hover:underline whitespace-nowrap">My notes</a>
-    <a href="#" class="ml-3 hover:underline whitespace-nowrap">About</a>
+    <button (click)="isAboutShowing = true" class="ml-3 hover:underline whitespace-nowrap">About</button>
   </nav>
 
 </header>
 
 <router-outlet></router-outlet>
 
+<aside>
+  <app-note-saver></app-note-saver>
+</aside>
+
 <footer class="footer mt-4 p-3 bg-blue-900">
 
   <p class="text-right mx-auto max-w-screen-lg text-gray-100">
     Made by
-    <a href="https://github.com/Shadou1" class="text-white underline">Shadou</a>
+    <a href="https://github.com/Shadou1" target="_blank" class="text-white underline">Shadou</a>
   </p>
 
 </footer>
+
+<div class="fixed top-0 left-0 w-screen bg-gray-600 bg-opacity-50" [style.height]="'9999px'" [class.invisible]="!isAboutShowing" (click)="isAboutShowing = false">
+
+  <section class="absolute top-0 left-0 w-screen h-screen flex items-center justify-center">
+
+    <p class="w-1/3 bg-gray-800 bg-opacity-90 rounded text-gray-50 align-middle p-10" (click)="$event.stopPropagation()">
+      App for keeping and manipulating notes.
+      You can view your notes, filter notes, add, edit, and delete notes.
+      Note body can be edited on any page.
+      If you edit a note and then delete it, it can still be saved back.
+      <br>
+      Made with <a href="https://angular.io/" target="_blank" class="text-blue-300">Angular</a>
+      and <a href="https://tailwindcss.com/" target="_blank" class="text-blue-300">Tailwind</a>
+      using <a href="https://github.com/ngneat/tailwind" target="_blank" class="text-blue-300">Angular Tailwind CSS Schematics</a>.
+      Backend is emulated with <a href="https://github.com/angular/in-memory-web-api" target="_blank" class="text-blue-300">Angular in-memory-web-api</a>.
+    </p>
+
+  </section>
+
+</div>

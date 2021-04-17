@@ -1,5 +1,5 @@
 <ng-container *ngIf="note">
-  <app-task *ngIf="isTask(note)" [note]="note" [isNoteTagsConstrained]="isNoteTagsConstrained" [isNoteBodyConstrained]="isNoteBodyConstrained"></app-task>
-  <app-event *ngIf="isEvent(note)" [note]="note" [isNoteTagsConstrained]="isNoteTagsConstrained" [isNoteBodyConstrained]="isNoteBodyConstrained"></app-event>
-  <app-note *ngIf="!isTask(note) && !isEvent(note)" [note]="note" [isNoteTagsConstrained]="isNoteTagsConstrained" [isNoteBodyConstrained]="isNoteBodyConstrained"></app-note>
+  <app-task *ngIf="isTask(note)" [note]="note" [isNoteTagsConstrained]="isNoteTagsConstrained" [isNoteBodyConstrained]="isNoteBodyConstrained" [isNoteEditable]="isNoteEditable"></app-task>
+  <app-event *ngIf="isEvent(note)" [note]="note" [isNoteTagsConstrained]="isNoteTagsConstrained" [isNoteBodyConstrained]="isNoteBodyConstrained" [isNoteEditable]="isNoteEditable"></app-event>
+  <app-note *ngIf="!isTask(note) && !isEvent(note)" [note]="note" [isNoteTagsConstrained]="isNoteTagsConstrained" [isNoteBodyConstrained]="isNoteBodyConstrained" [isNoteEditable]="isNoteEditable"></app-note>
 </ng-container>

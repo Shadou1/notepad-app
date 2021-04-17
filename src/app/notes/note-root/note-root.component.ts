@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Note, Task, Event as EventNote, isTask, isEvent } from 'src/app/types';
+import { Component, Input, OnInit } from '@angular/core'
+import { Note, Task, Event as EventNote, isTask, isEvent } from 'src/app/types'
 
 @Component({
   selector: 'app-note-root',
@@ -9,6 +9,7 @@ import { Note, Task, Event as EventNote, isTask, isEvent } from 'src/app/types';
 export class NoteRootComponent implements OnInit {
 
   @Input() note: Note | Task | EventNote | undefined
+  @Input() isNoteEditable = false
   @Input() isNoteTagsConstrained = true
   @Input() isNoteBodyConstrained = false
 

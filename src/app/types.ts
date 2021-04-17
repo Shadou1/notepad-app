@@ -44,3 +44,13 @@ export function isTask(note: Note | Task | Event): note is Task {
 export function isEvent(note: Note | Task | Event): note is Event {
   return (note as Event).startDate !== undefined
 }
+
+// Type utils
+
+export function getNoteType(note : Note | Task | Event) {
+
+  if (isTask(note)) return 'task'
+  else if (isEvent(note)) return 'event'
+  else return 'note'
+
+}

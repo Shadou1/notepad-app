@@ -1,27 +1,53 @@
 <div *ngIf="note" class="note">
 
   <div class="note-tags" [ngClass]="{ 'note-tags-unconstrained': !isNoteTagsConstrained }">
-    <a *ngIf="note.importance" href="#"
+    <a *ngIf="note.importance"
+      routerLink="/notes" [queryParams]="{ importance: note.importance }"
       class="note-tag"
       [style.backgroundColor]="importanceDetails[note.importance].backgroundColor"
     >
       {{ importanceDetails[note.importance].text + " priority" }}
     </a>
-    <div #divCategories *ngIf="note.categories" class="note-categories" [ngClass]="{ 'note-categories-unconstrained': !isNoteTagsConstrained }">
-        <a #aCategory *ngFor="let category of note.categories" href="#" class="pill btn-blue">
-          {{ category }}
-        </a>
+    <div #divCategories *ngIf="note.categories || isNoteEditable" class="note-categories" [ngClass]="{ 'note-categories-unconstrained': !isNoteTagsConstrained }">
+        <ng-container *ngFor="let category of note.categories">
+          <a
+            routerLink="/notes" [queryParams]="{ category: category }"
+            class="pill btn-blue"
+          >
+            {{ category }}
+          </a>
+          <button *ngIf="isNoteEditable" (click)="deleteCategory(category)"  class="pill btn-red">X</button>
+        </ng-container>
+        <button *ngIf="isNoteEditable" (click)="isAddCategoryCollapsed = !isAddCategoryCollapsed" class="pill btn-blue">
+          {{ isAddCategoryCollapsed ? '+' : '-' }}
+        </button>
     </div>
+
   </div>
 
   <div class="note-main">
 
-    <a routerLink="/note/{{ note.id }}" class="note-header">
+    <fieldset class="note-category-new" [ngClass]="{ 'invisible': isAddCategoryCollapsed }">
+
+      <div class="flex items-center">
+        <label for="input-new-category" class="text-lg font-semibold whitespace-nowrap">New category:</label>
+        <input #newCategory type="text" name="new-category" id="input-new-category" class="ml-2">
+      </div>
+      <button (click)="addCategory(newCategory.value)" class="pill btn-blue mt-4">Add category</button>
+
+    </fieldset>
+
+    <a *ngIf="!isNoteEditable" routerLink="/note/{{ note.id }}" class="note-header">
       <h3 *ngIf="note.title" class="note-title">{{ note.title }}</h3>
     </a>
 
+    <div *ngIf="isNoteEditable" class="note-header">
+      <input type="text" name="note-title" id="input-note-title" [(ngModel)]="note.title" class="note-title">
+    </div>
+
     <div class="note-body" [ngClass]="{ 'note-body-constrained': isNoteBodyConstrained, 'note-body-min-h': !isNoteBodyConstrained }">
-      <p>{{ note.body }}</p>
+      <!-- <p>{{ note.body }}</p> -->
+      <textarea spellcheck="false" name="note-body" id="input-note-body" [(ngModel)]="note.body"></textarea>
     </div>
 
   </div>

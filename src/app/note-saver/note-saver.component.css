@@ -1,0 +1,6 @@
+.spinner {
+  border: 4px solid #FFFFFF00;
+  border-top: 4px solid #DDD;
+  border-radius: 50%;
+  @apply inline-block w-6 h-6 animate-spin;
+}

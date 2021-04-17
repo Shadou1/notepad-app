@@ -20,8 +20,20 @@
     @apply flex justify-end flex-grow flex-wrap pr-2 h-10 overflow-hidden;
   }
 
+  .note-categories > :is(a, button) {
+    @apply inline-block whitespace-nowrap ml-1 my-1;
+  }
+
   .note-categories > a {
-    @apply inline-block whitespace-nowrap ml-2 my-1;
+    @apply ml-2;
+  }
+
+  .note-categories > button {
+    @apply w-10;
+  }
+
+  .note-category-new, .note-category-edit {
+    @apply absolute right-0 md:right-8 p-2 bg-yellow-200 border-2 border-black rounded-md shadow-md;
   }
 
   .note-main {
@@ -30,6 +42,10 @@
 
   .note-header {
     @apply flex items-center bg-yellow-300 px-2 py-1 h-10 border-b-2 border-black;
+  }
+
+  .note-header > input {
+    @apply bg-yellow-300 font-semibold;
   }
 
   .note-title {
@@ -42,6 +58,10 @@
 
   .note-body {
     @apply bg-white px-2 text-lg; /* pt-1 */
+  }
+
+  .note-main :is(input, textarea) {
+    @apply w-full h-full resize-none;
   }
 
   /* Toggleable classes */
@@ -59,7 +79,11 @@
   }
 
   .note-body-min-h {
-    min-height: 10rem;
+    @apply h-60;
+  }
+
+  .note-root {
+    @apply max-w-screen-md w-full;
   }
 
 }

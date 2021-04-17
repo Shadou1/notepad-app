@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api'
-import { Observable } from 'rxjs';
 
-import { User, Note, Task, Event as EventNote } from './types';
+import { User, Note, Task, Event as EventNote } from './types'
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const users: User[] = [
       {
-        id: 's777777102',
+        id: '123exampleId',
         nickname: 'Shadou'
       }
     ]
@@ -21,36 +20,37 @@ export class InMemoryDataService implements InMemoryDbService {
     const notes: Note[] = [
       {
         id: '984635494',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'About kezo',
         body: 'I think kezo is up to no good',
+        categories: ['Teeworlds', 'Failers'],
         createdAt: new Date(),
       },
       {
         id: '1612356141',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         body: 'This note has no title',
         createdAt: new Date(),
       },
       {
         id: '5123512351235',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'This note has a very long titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
         body: '',
         createdAt: new Date(),
       },
       {
         id: '984615874',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'About FapMan',
         body: 'FapMan is loosing points rapidly jalkdjflaskdjflkajsd lfkajsd flkjsadl;f kjasdl fkjasdl fjl',
-        categories: ['FapMan', 'Points', 'Novice'],
+        categories: ['FapMan', 'Points', 'Novice', 'Teeworlds', 'Failers'],
         createdAt: new Date(),
         importance: 1,
       },
       {
         id: '987467123',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'About Gazmanov',
         body: 'He is a good person',
         createdAt: new Date(),
@@ -61,11 +61,12 @@ export class InMemoryDataService implements InMemoryDbService {
         authorId: '666666zm102',
         title: 'About Shadou',
         body: 'Pidoras',
+        categories: ['Teeworlds', 'Never fails'],
         createdAt: new Date(),
       },
       {
         id: '152351235',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'About Igor',
         body: 'This note has an overwhelming amount of categories',
         importance: 3,
@@ -74,7 +75,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: '13512351',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'Very long note',
         body: 'God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me. God out pastor I will not be needing anything. He rests me in golden fields and leads me to the calm waters. He resusitates me.',
         createdAt: new Date(),
@@ -87,27 +88,27 @@ export class InMemoryDataService implements InMemoryDbService {
     const tasks: Task[] = [
       {
         id: '11351251',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'Clean certain face',
         body: 'Certain face is in desperate need of cleaning',
         createdAt: new Date(),
-        categories: ['kezo1', 'kezo2', 'kezo3', 'kezo4', 'kezo5', 'kezo6', 'kezo7', 'kezo8', 'kezo9'],
+        categories: ['kezo', 'Teeworlds', 'Failers', 'Hookers'],
         status: 2,
         importance: 3,
       },
       {
         id: '13151',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'Kill',
-        body: 'Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill Kill',
-        categories: ['Mapmaker', 'DDMax', 'Very long categoryyyyyyyyyyyyyy'],
+        body: 'Mapmaker is no more',
+        categories: ['Mapmaker', 'DDMax'],
         createdAt: new Date(),
         status: 1,
         importance: 4,
       },
       {
         id: '1426123',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'Find who is responsive',
         body: 'Who is responsible for this shit?',
         createdAt: new Date(),
@@ -120,7 +121,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const events: EventNote[] = [
       {
         id: '81948964',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'Earn points',
         body: 'Spend a little bit earning points',
         createdAt: new Date(),
@@ -129,7 +130,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: '513251235',
-        authorId: 's777777102',
+        authorId: '123exampleId',
         title: 'Search for kezo',
         body: 'kezo is lost',
         createdAt: new Date(),
@@ -139,8 +140,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: '6456819',
-        authorId: 's777777102',
-        title: 'Execute corneum',
+        authorId: '123exampleId',
+        title: 'Execute Corneum',
         body: 'He made his last map',
         createdAt: new Date(),
         startDate: new Date(),

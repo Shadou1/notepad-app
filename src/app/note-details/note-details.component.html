@@ -1,22 +1,55 @@
 <main class="min-h-screen">
 
-  <section *ngIf="note" class="note-info flex mx-4 mb-8 justify-between">
+  <h1 *ngIf="!this.isGettingNote && !this.note" class="header-main">Note not found</h1>
 
-    <div class="flex flex-col">
+  <div *ngIf="this.isGettingNote">
+    <h3 class="text-center mt-8">Getting your note</h3>
+  </div>
+
+  <section *ngIf="note" class="note-control flex mx-4 mb-8">
+
+    <div class="note-info flex flex-col">
 
       <h2 class="text-lg">Note info:</h2>
 
+      <p>Created: {{ note.createdAt | date }}</p>
+
+    </div>
+
+    <div class="note-parameters flex flex-wrap mx-2 md:mx-8">
+
       <div>
-        <label for="note-created-at">Created at:</label>
-        <input type="date" name="note-created-at" id="note-created-at" [value]="note.createdAt.toISOString().substr(0, 10)" readonly>
+        <label for="select-note-type" class="text-lg font-semibold">Change note type:</label>
+        <select name="note-type" id="select-note-type" [formControl]="noteType">
+          <option value='note'>Note</option>
+          <option value='task'>Task</option>
+          <option value='event'>Event</option>
+        </select>
+      </div>
+
+      <div class="md:ml-4">
+        <label for="select-note-priority" class="text-lg font-semibold">Change note priority:</label>
+        <select name="note-priority" id="select-note-priority" [formControl]="notePriority">
+          <option value=""></option>
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
+          <option value="4">Critical</option>
+        </select>
       </div>
 
     </div>
 
-    <button class="pill btn-red self-start">Delete note</button>
+    <div class="flex-1 flex justify-end">
+      <button class="pill btn-red self-start" (click)="this.deleteNote()">
+        <div *ngIf="this.isDeleting" class="spinner"></div>
+        {{ this.isDeleting ? "Deleting" : "Delete note"  }}
+      </button>
+    </div>
+
 
   </section>
 
-  <app-note-root [note]="note" [isNoteTagsConstrained]="false" class="block mx-4"></app-note-root>
+  <app-note-root [note]="note" [isNoteTagsConstrained]="false" [isNoteEditable]="true" class="block mx-4"></app-note-root>
 
 </main>

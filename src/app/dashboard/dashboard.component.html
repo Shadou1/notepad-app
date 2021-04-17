@@ -2,9 +2,11 @@
 
   <h1 class="header-main">Dashboard</h1>
 
-  <!-- TODO add prettier loading -->
-  <div *ngIf="this.gettingNotes">
-    <h3 class="text-center mt-8">Getting your notes</h3>
+  <div *ngIf="this.isGettingNotes">
+    <h3 class="text-center mt-8">
+      <div class="spinner"></div>
+      Getting your notes
+    </h3>
   </div>
 
   <section *ngIf="notesRelevant && notesRelevant.length" class="notes notes-relevant">

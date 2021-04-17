@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   notesWeek: Notes | undefined
   notesMonth: Notes | undefined
 
-  gettingNotes = false
+  isGettingNotes = false
 
   constructor(
     private notesService: NotesService
@@ -24,15 +24,17 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNotes()
+    // Uninitialize new note when navigating to dashboard
+    this.notesService.newNote = undefined
   }
 
   getNotes() {
 
-    this.gettingNotes = true
+    this.isGettingNotes = true
 
     this.notesService.getNotes().subscribe(notes => {
 
-      this.gettingNotes = false
+      this.isGettingNotes = false
 
       this.notes = notes.notes
       this.notes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())

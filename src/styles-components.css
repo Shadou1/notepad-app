@@ -4,6 +4,10 @@
     @apply bg-yellow-50;
   }
 
+  * {
+    @apply focus:outline-none;
+  }
+
 }
 
 @layer components {
