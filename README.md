@@ -21,3 +21,7 @@ Notepad web app for keeping and managing notes.
 * [Angular](https://angular.io/)
 * [Tailwind](https://tailwindcss.com/) using [Angular Tailwind CSS Schematics](https://github.com/ngneat/tailwind)
 * [Angular in-memory-web-api](https://github.com/angular/in-memory-web-api) for backend emulation
+
+## Link to github pages
+
+[Notepad app](https://shadou1.github.io/notepad-app/)
